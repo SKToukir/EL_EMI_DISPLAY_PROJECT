@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient_screen"
+    android:orientation="vertical"
+    android:paddingStart="56dp"
+    android:paddingEnd="56dp"
+    android:paddingTop="28dp"
+    android:paddingBottom="28dp">
+
+    <!-- Header -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Activate Your Warranty"
+        android:textColor="@color/warranty_primary"
+        android:textSize="34sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:gravity="center"
+        android:text="Protect your TV and enjoy hassle-free service by activating your warranty today."
+        android:textColor="@color/warranty_text_secondary"
+        android:textSize="15sp" />
+
+    <!-- Main content row: fills remaining space via weight=1 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="18dp"
+        android:orientation="horizontal">
+
+        <!-- LEFT COLUMN -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.4"
+            android:layout_marginEnd="16dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <!-- Illustration -->
+            <FrameLayout
+                android:layout_width="160dp"
+                android:layout_height="160dp">
+
+                <ImageView
+                    android:id="@+id/ivTvIcon"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:background="@drawable/bg_illustration_circle"
+                    android:padding="36dp"
+                    android:src="@drawable/ic_tv"
+                    app:tint="@color/warranty_primary" />
+
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="top|end"
+                    android:background="@drawable/bg_badge_circle_success"
+                    android:padding="7dp"
+                    android:src="@drawable/ic_shield_check"
+                    app:tint="@android:color/white" />
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="bottom|start"
+                    android:background="@drawable/bg_badge_circle_white"
+                    android:padding="6dp"
+                    android:src="@drawable/ic_certificate"
+                    app:tint="@color/warranty_warning" />
+
+            </FrameLayout>
+
+            <!-- Benefits section -->
+            <LinearLayout
+                android:id="@+id/llBenefits"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginTop="18dp"
+                android:orientation="vertical" />
+
+        </LinearLayout>
+
+        <!-- RIGHT COLUMN -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.6"
+            android:orientation="vertical">
+
+            <!-- Activation Code Card -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_activation_card"
+                android:elevation="6dp"
+                android:orientation="vertical"
+                android:padding="22dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_qr_code"
+                        app:tint="@color/warranty_primary" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="Warranty Activation Code"
+                        android:textColor="@color/warranty_primary"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <!-- TV Barcode display -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:background="@drawable/bg_barcode_display"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TV Barcode:"
+                        android:textColor="@color/warranty_text_secondary"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/txtTvBarcode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="monospace"
+                        android:letterSpacing="0.06"
+                        android:text="00000000000000"
+                        android:textColor="@color/warranty_primary"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/etActivationCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="14dp"
+                    android:background="@drawable/bg_input_field_warranty"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center_vertical"
+                    android:hint="ABCD-1234-EFGH"
+                    android:inputType="textCapCharacters"
+                    android:letterSpacing="0.08"
+                    android:paddingStart="18dp"
+                    android:paddingEnd="18dp"
+                    android:singleLine="true"
+                    android:textColor="@color/warranty_text_primary"
+                    android:textColorHint="#9AA0A6"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/txtCodeError"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:textColor="@color/warranty_error"
+                    android:textSize="13sp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Collect activation code from EMI Kisti Portal and Enter the activation code provided by the salesperson."
+                    android:textColor="@color/warranty_text_secondary"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
+
+            <!-- Info Card -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_info_card"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_marginTop="2dp"
+                    android:src="@drawable/ic_info"
+                    app:tint="@color/warranty_warning" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Don't have an activation code?"
+                        android:textColor="@color/warranty_text_primary"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:lineSpacingExtra="3dp"
+                        android:text="The activation code is provided by the salesperson during purchase. Salespersons can generate the activation code from the EMI Kisti Portal. Please contact your salesperson if you have not received the code."
+                        android:textColor="@color/warranty_text_secondary"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Bottom buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnActivateWarranty"
+            android:layout_width="0dp"
+            android:layout_height="54dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/bg_button_primary"
+            android:stateListAnimator="@animator/tv_button_focus_scale"
+            android:elevation="4dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:text="Activate Warranty"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnActivateLater"
+            android:layout_width="0dp"
+            android:layout_height="54dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_button_secondary"
+            android:stateListAnimator="@animator/tv_button_focus_scale"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:text="Activate Later"
+            android:textAllCaps="false"
+            android:textColor="@color/warranty_text_secondary"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -19,7 +19,9 @@ import com.walton.startupbroadcast.helper.DisplayWindowManager;
 import com.walton.startupbroadcast.helper.EmiApiHelper;
 import com.walton.startupbroadcast.helper.LockWindowManager;
 import com.walton.startupbroadcast.helper.MainUiController;
+import com.walton.startupbroadcast.helper.PaymentWindowManager;
 import com.walton.startupbroadcast.helper.PinVerificationHelper;
+import com.walton.startupbroadcast.helper.WarrantyActivationWindowManager;
 import com.walton.startupbroadcast.model.ActivationModel;
 import com.walton.startupbroadcast.repository.autoregistration.ImplAutoRegistration;
 import com.walton.startupbroadcast.repository.display.ImplIDisplayRepository;
@@ -41,7 +43,7 @@ import java.util.List;
 public class MainActivity extends Activity
         implements MainUiController.UiEventCallback,
         LockWindowManager.LockWindowCallback,
-        PinVerificationHelper.PinVerificationCallback, DisplayWindowManager.DisplayWindowManagerCallBack {
+        PinVerificationHelper.PinVerificationCallback, DisplayWindowManager.DisplayWindowManagerCallBack, PaymentWindowManager.PaymentWindowManagerCallBack {
 
     // ─── Handler message IDs ───────────────────────────────────────────────────
     public static final int INTERNET_STATUS = 123;
@@ -64,6 +66,7 @@ public class MainActivity extends Activity
     private MainUiController uiController;
     private LockWindowManager lockWindowManager;
     private DisplayWindowManager displayWindowManager;
+    private WarrantyActivationWindowManager warrantyActivationWindowManager;
     private PinVerificationHelper pinHelper;
     private EmiApiHelper emiApiHelper;
 
@@ -154,6 +157,18 @@ public class MainActivity extends Activity
         lockWindowManager = new LockWindowManager(MainActivity.this, this);
         displayWindowManager = new DisplayWindowManager(MainActivity.this, this);
         emiApiHelper = new EmiApiHelper(this, implAutoRegistration, implEMIRepository);
+
+        warrantyActivationWindowManager = new WarrantyActivationWindowManager(MainActivity.this, new WarrantyActivationWindowManager.WarrantyActivationCallback() {
+            @Override
+            public void onActivationConfirmed(String activationCode) {
+
+            }
+
+            @Override
+            public void onActivateLater() {
+
+            }
+        });
         // pinHelper is created lazily when MAC address is available
     }
 
@@ -501,7 +516,8 @@ public class MainActivity extends Activity
     @Override
     public void selectSetPayment() {
         Log.d(TAG, "selectSetPayment: 1");
-        showRequestCodeAlert();
+        displayWindowManager.dismiss();
+        warrantyActivationWindowManager.show();
     }
 
     @Override
@@ -596,5 +612,11 @@ public class MainActivity extends Activity
         }
         Log.d(TAG, "launchHomeDisplayMode: 4");
         displayWindowManager.dismiss();
+        finish();
+    }
+
+    @Override
+    public void onPaymentSelectionComplete(boolean isEmi, int installmentMonths) {
+
     }
 }

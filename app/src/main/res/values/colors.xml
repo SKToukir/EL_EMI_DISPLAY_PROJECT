@@ -25,4 +25,14 @@
     <!-- Text and Icon color -->
     <color name="btn_text_color">#E8EAED</color>
 
+    <color name="warranty_primary">#1565C0</color>
+    <color name="warranty_secondary">#42A5F5</color>
+    <color name="warranty_background">#F5F8FC</color>
+    <color name="warranty_success">#2E7D32</color>
+    <color name="warranty_warning">#F9A825</color>
+    <color name="warranty_text_primary">#202124</color>
+    <color name="warranty_text_secondary">#5F6368</color>
+    <color name="warranty_error">#E70000</color>
+    <color name="warranty_card_border">#D0D7E2</color>
+
 </resources>

@@ -122,7 +122,6 @@ public class DisplayWindowManager {
     public void dismiss() {
         if (winManager != null && mainView != null) {
             winManager.removeView(mainView);
-            mActivity.finish();
         }
     }
 
