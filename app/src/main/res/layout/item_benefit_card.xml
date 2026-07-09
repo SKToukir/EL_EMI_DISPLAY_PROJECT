@@ -4,11 +4,15 @@
     android:layout_height="wrap_content"
     android:background="@drawable/bg_card_rounded"
     android:elevation="2dp"
+    android:clipChildren="false"
+    android:clipToPadding="false"
     android:gravity="center_vertical"
     android:orientation="horizontal"
     android:padding="14dp">
 
     <FrameLayout
+        android:clipChildren="false"
+        android:clipToPadding="false"
         android:layout_width="38dp"
         android:layout_height="38dp"
         android:background="@drawable/bg_benefit_icon_circle">

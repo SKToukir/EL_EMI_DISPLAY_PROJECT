@@ -206,7 +206,7 @@
                 android:layout_marginTop="16dp"
                 android:background="@drawable/bg_info_card"
                 android:orientation="horizontal"
-                android:padding="16dp">
+                android:padding="4dp">
 
                 <ImageView
                     android:layout_width="22dp"
@@ -226,7 +226,7 @@
                         android:layout_height="wrap_content"
                         android:text="Don't have an activation code?"
                         android:textColor="@color/warranty_text_primary"
-                        android:textSize="14sp"
+                        android:textSize="12sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -236,7 +236,7 @@
                         android:lineSpacingExtra="3dp"
                         android:text="The activation code is provided by the salesperson during purchase. Salespersons can generate the activation code from the EMI Kisti Portal. Please contact your salesperson if you have not received the code."
                         android:textColor="@color/warranty_text_secondary"
-                        android:textSize="13sp" />
+                        android:textSize="11sp" />
 
                 </LinearLayout>
 
@@ -261,7 +261,6 @@
             android:layout_weight="1"
             android:layout_marginEnd="16dp"
             android:background="@drawable/bg_button_primary"
-            android:stateListAnimator="@animator/tv_button_focus_scale"
             android:elevation="4dp"
             android:focusable="true"
             android:focusableInTouchMode="true"
@@ -277,7 +276,6 @@
             android:layout_height="54dp"
             android:layout_weight="1"
             android:background="@drawable/bg_button_secondary"
-            android:stateListAnimator="@animator/tv_button_focus_scale"
             android:focusable="true"
             android:focusableInTouchMode="true"
             android:text="Activate Later"
