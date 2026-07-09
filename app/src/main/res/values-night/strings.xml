@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">EMI Tracker</string>
+    <string name="caution_messaege">"If you have selected a payment option for selling the TV, press the “Confirm” button below.This step is only required for selling the TV  Otherwise, if the payment page appears, press the Home button on the remote to exit. "</string>
+    <string name="emi_selected">You have selected the (EMI) option.</string>
+    <string name="cash_selected">You have selected the (Cash) option.</string>
+    <string name="warning_dialog_message">Warning Message</string>
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Exit</string>
+    <string name="television_is_locked">Your Television is Locked!</string>
+    <string name="unlock_message">Unlock the TV by paying the next installment</string>
+    <string name="barcode">Barcode</string>
+    <string name="barcode_passcode_message">Collect the displayed barcode and passcode and contact your TV seller</string>
+    <string name="passcode">Passcode</string>
+    <string name="unlock">Unlock Your Tv</string>
+    <string name="footer_messsage">If the TV is locked before one month is completed, collect the displayed barcode and passcode and contact the seller</string>
+    <string name="press_ok">Press OK button from your remote</string>
+    <string name="emi_complete">EMI Installment Payment Complete!</string>
+    <string name="check_internet_connection">Please connect with internet</string>
+    <string name="enter_correct_barcode">Please enter correct BARCODE</string>
+    <string name="device_clean">Device cleaned successfully</string>
+    <string name="warning_message">Your TV may be locked soon. Please make your installment payments on time, otherwise the service will be stopped.
+If you have already purchased this TV in full cash, please contact your sales point to avoid the lock.</string>
+    <string name="caution_message">If you have selected a payment option for selling the TV, press Confirm below to proceed. This step is only required when selling the TV.</string>
+
+    <string name="warning_hint_message">Otherwise press Cancel or the Home button on your remote to exit</string>
+
+    <string name="remote_nav_hint">Select  OK</string>
+    <string name="caution_display_message">ডিসপ্লে ব্যবহারের সময়সীমা বৃদ্ধি করতে একটি বৈধ কোড প্রদান করুন। কোডটি EMI পোর্টাল থেকে সংগ্রহ করতে হবে। যদি আপনার পোর্টালে অ্যাক্সেস না থাকে, অনুগ্রহ করে সংশ্লিষ্ট কর্তৃপক্ষের সাথে যোগাযোগ করুন।</string>
+
+</resources>

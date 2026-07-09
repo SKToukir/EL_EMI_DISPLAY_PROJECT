@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:visibility="invisible"
+        android:id="@+id/txtPressOkButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Copyright © 2024 and all rights reserved by - All Sister Concerns of WALTON Group"
+        android:textSize="12sp"
+        android:textStyle="italic"
+        android:textColor="@color/light_gray"
+        android:gravity="center_horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:paddingBottom="8dp" />
+
+</RelativeLayout>

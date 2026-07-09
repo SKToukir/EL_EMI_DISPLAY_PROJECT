@@ -1,0 +1,2 @@
+02-19 12:23:50.376 11182 11205 I TestRunner: started: useAppContext(com.walton.startupbroadcast.ExampleInstrumentedTest)
+02-19 12:23:50.385 11182 11205 I TestRunner: finished: useAppContext(com.walton.startupbroadcast.ExampleInstrumentedTest)

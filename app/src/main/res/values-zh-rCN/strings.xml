@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">EMI Tracker</string>
+    <string name="caution_messaege">如果您已选择了出售电视的付款方式，请按下方的“确认”按钮。否则，如果出现付款页面，\n请按遥控器上的 主页 按钮退出。此步骤仅适用于出售电视的情况。</string>
+    <string name="emi_selected">您已选择分期付款（EMI）选项</string>
+    <string name="cash_selected">您已选择现金（Cash）选项</string>
+    <string name="warning_dialog_message">"警告 "</string>
+    <string name="confirm">确认</string>
+    <string name="cancel">取消</string>
+    <string name="television_is_locked">您的电视已被锁定</string>
+    <string name="unlock_message">支付下一期款项以解锁电视。</string>
+    <string name="barcode">"条形码 "</string>
+    <string name="barcode_passcode_message">收集显示的条形码和密码，并联系您的电视销售商</string>
+    <string name="passcode">密码</string>
+    <string name="unlock">解锁您的电视</string>
+    <string name="footer_messsage">如果电视在一个月到期前被锁定，请收集显示的条形码和密码并联系卖家</string>
+    <string name="press_ok">按遥控器上的“确定”按钮</string>
+    <string name="emi_complete">分期付款已完成！</string>
+    <string name="check_internet_connection">请连接互联网。</string>
+    <string name="enter_correct_barcode">请输入正确的条形码</string>
+    <string name="device_clean">数据删除成功。</string>
+    <string name="warning_message">您的电视可能很快会被锁定。请按时支付分期款，否则服务将被停止。
+如果您已一次性现金购买此电视，请联系您的销售点以避免锁定。</string>
+    <string name="caution_message">如果您已为出售电视选择了付款选项，请按下方的<b>确认</b>按钮继续操作。此步骤仅在出售电视时需要执行。</string>
+
+    <string name="warning_hint_message">否则，请按取消按钮或遥控器上的主页按钮退出</string>
+
+    <string name="remote_nav_hint">选择  OK</string>
+</resources>

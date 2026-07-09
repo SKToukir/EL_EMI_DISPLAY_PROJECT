@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:visibility="visible"
+        android:id="@+id/rlMainLayout"
+        android:background="@color/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:visibility="gone"
+            android:id="@+id/rlEMILayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:id="@+id/rlRegistrationPage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="55dp"
+                    android:gravity="center"
+                    android:text="Set the payment method"
+                    android:textColor="@color/light_gray"
+                    android:textSize="32sp" />
+
+
+                <TextView
+                    android:id="@+id/test"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="35dp"
+                    android:fontFamily="@font/arimo"
+                    android:gravity="center"
+                    android:text="Please enter Mobile number for \n authorizing your Television"
+                    android:textAlignment="center"
+                    android:textSize="14sp"
+                    android:visibility="invisible" />
+
+                <LinearLayout
+                    android:id="@+id/lnMethod"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="45dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/rounded_corner_back"
+                        android:orientation="horizontal"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Pay in EMI"
+                            android:textSize="18dp" />
+
+                        <CheckBox
+                            android:focusedByDefault="true"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
+                            android:id="@+id/checkBoxEMI"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/rounded_corner_back"
+                        android:orientation="horizontal"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Cash Payment"
+                            android:textSize="18dp" />
+
+                        <CheckBox
+                            android:id="@+id/checkBoxCash"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lnEmi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Select Installment Option" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:background="@drawable/rounded_corner_back"
+                                android:orientation="horizontal"
+                                android:padding="5dp">
+
+                                <TextView
+                                    android:layout_width="100dp"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="3 Months"
+                                    android:textSize="14sp" />
+
+                                <CheckBox
+                                    android:id="@+id/checkBoxThree"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:background="@drawable/rounded_corner_back"
+                                android:orientation="horizontal"
+                                android:padding="5dp">
+
+                                <TextView
+                                    android:layout_width="100dp"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="6 Months"
+                                    android:textSize="12dp" />
+
+                                <CheckBox
+                                    android:id="@+id/checkBoxSix"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="15dp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:background="@drawable/rounded_corner_back"
+                                android:orientation="horizontal"
+                                android:padding="5dp">
+
+                                <TextView
+                                    android:layout_width="100dp"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="9 Months"
+                                    android:textSize="14sp" />
+
+                                <CheckBox
+                                    android:id="@+id/checkBoxNine"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:background="@drawable/rounded_corner_back"
+                                android:orientation="horizontal"
+                                android:padding="5dp">
+
+                                <TextView
+                                    android:layout_width="100dp"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="12 Months"
+                                    android:textSize="12dp" />
+
+                                <CheckBox
+                                    android:id="@+id/checkBoxTwelve"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="15dp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:visibility="gone"
+                android:id="@+id/btnCompleteProcess"
+                android:layout_width="200dp"
+                android:layout_height="60dp"
+                android:layout_above="@+id/txtPressOkButton"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="#00000000"
+                android:elevation="2dp"
+                android:text="Complete Process"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <TextView
+                android:visibility="invisible"
+                android:id="@+id/txtPressOkButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/press_ok"
+                android:textSize="12sp"
+                android:textStyle="italic"
+                android:textColor="@color/light_gray"
+                android:gravity="center"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:paddingBottom="8dp" />
+
+        </RelativeLayout>
+
+        <!--Locker Layout-->
+        <RelativeLayout
+            android:visibility="gone"
+            android:id="@+id/rlLockPopup"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="32dp">
+
+            <LinearLayout
+                android:id="@+id/lnTextMessage"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="12dp"
+                    android:src="@drawable/ic_lock_outline"
+                    app:tint="#920C02" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/television_is_locked"
+                    android:textColor="#F44336"
+                    android:textSize="26sp"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-medium" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/unlock_message"
+                    android:textColor="#EEEEEE"
+                    android:textSize="16sp"
+                    android:gravity="center" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/barcode_passcode_message"
+                    android:textColor="#CCCCCC"
+                    android:textSize="14sp"
+                    android:gravity="center" />
+
+
+                <LinearLayout
+                    android:layout_below="@id/lnTextMessage"
+                    android:layout_marginTop="24dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_margin="8dp"
+                        android:orientation="vertical"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:background="@drawable/bg_card_white"
+                        android:padding="12dp"
+                        android:layout_marginEnd="4dp"
+                        android:elevation="2dp"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/txtBarcode"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="••••••••••••••"
+                            android:textSize="18sp"
+                            android:textColor="#000000"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/barcode"
+                            android:textColor="#555555"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_margin="8dp"
+                        android:orientation="vertical"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:background="@drawable/bg_card_white"
+                        android:padding="12dp"
+                        android:layout_marginStart="4dp"
+                        android:elevation="2dp"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/txtPassCode"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="••••••"
+                            android:textSize="18sp"
+                            android:textColor="#000000"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/passcode"
+                            android:textColor="#555555"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lnPinCode"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/lnTextMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <EditText
+                    android:visibility="gone"
+                    android:gravity="center"
+                    android:id="@+id/inputPincode"
+                    android:hint="Input 8 Digit Pin Code"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:maxLength="8"
+                    android:maxLines="1"
+                    android:minWidth="180dp" />
+
+            </LinearLayout>
+
+            <!-- Unlock Button -->
+            <Button
+                android:id="@+id/btnSubmitEMICode"
+                android:layout_below="@id/lnTextMessage"
+                android:layout_marginTop="50dp"
+                android:layout_width="200dp"
+                android:layout_height="60dp"
+                android:layout_centerHorizontal="true"
+                android:backgroundTint="#4CAF50"
+                android:textColor="#FFFFFF"
+                android:text="@string/unlock"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:textSize="16sp"
+                android:elevation="4dp"
+                android:background="@drawable/bg_button_green"
+                android:layout_marginBottom="16dp" />
+            <TextView
+                android:textSize="12sp"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/press_ok"
+                android:gravity="center"
+                android:layout_below="@+id/btnSubmitEMICode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <!-- Footer Warning -->
+            <TextView
+                android:layout_below="@id/btnSubmitEMICode"
+                android:layout_marginTop="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/footer_messsage"
+                android:textColor="#FF7043"
+                android:textSize="13sp"
+                android:padding="16dp" />
+
+        </RelativeLayout>
+
+        <!--        Display Design Page-->
+        <RelativeLayout
+            android:id="@+id/rlDisplayLayout"
+            android:visibility="visible"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- 1. HEADER: INSTRUCTIONS FOR SALES POINT -->
+            <LinearLayout
+                android:id="@+id/header_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginTop="32dp"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SALES POINT SETUP"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.15" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Required Action: Select configuration below"
+                    android:textColor="#B0B3B8"
+                    android:textSize="14sp"
+                    android:layout_marginTop="8dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lnButtons"
+                android:gravity="center"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_set_payment"
+                    android:layout_width="270dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="20dp"
+
+                    android:background="@drawable/bg_payment_button"
+                    android:textColor="@color/btn_text_color"
+                    android:text="Set Payment"
+                    android:textAllCaps="false"
+                    android:gravity="center"
+                    android:textSize="22sp"
+
+                    android:drawableStart="@drawable/ic_payment"
+                    android:drawablePadding="8dp"
+                    android:paddingStart="24dp"
+                    android:paddingEnd="24dp"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+
+                    android:focusable="true"
+                    android:clickable="true"
+
+                    android:layout_gravity="center" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_select_display"
+                    android:layout_width="270dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="20dp"
+
+                    android:background="@drawable/bg_payment_button"
+                    android:textColor="@color/btn_text_color"
+                    android:text="Display Mode (30)"
+                    android:textAllCaps="false"
+                    android:gravity="center"
+                    android:textSize="22sp"
+
+                    android:drawableStart="@drawable/ic_display"
+                    android:drawablePadding="8dp"
+                    android:paddingStart="24dp"
+                    android:paddingEnd="24dp"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+
+                    android:focusable="true"
+                    android:clickable="true"
+
+                    android:layout_gravity="center" />
+
+            </LinearLayout>
+
+            <TextView
+                android:gravity="center"
+                android:id="@+id/txtRemainingDisplayCount"
+                android:layout_below="@+id/lnButtons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <!-- 3. FOOTER: WARNING FOR CUSTOMER -->
+            <LinearLayout
+                android:layout_marginTop="25dp"
+                android:layout_below="@+id/txtRemainingDisplayCount"
+                android:id="@+id/footer_warning"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="#2A1F2123"
+                android:padding="16dp"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <View
+                    android:layout_width="50dp"
+                    android:layout_height="2dp"
+                    android:background="#5F6368"
+                    android:layout_marginBottom="16dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CUSTOMER NOTICE"
+                    android:textColor="#E57373"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.1"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="If you are seeing this page, please contact our service point immediately. Do not attempt to configure the device."
+                    android:textColor="#9AA0A6"
+                    android:gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:textSize="14sp"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <include layout="@layout/footer_layout"/>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

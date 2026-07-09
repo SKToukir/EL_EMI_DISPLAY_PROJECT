@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BarcodeEntryActivity">
+
+
+    <LinearLayout
+        android:id="@+id/rlRegistrationPage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="55dp"
+            android:gravity="center"
+            android:text="TV Barcode"
+            android:textColor="@color/light_gray"
+            android:textSize="32sp" />
+
+
+        <TextView
+            android:id="@+id/test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="35dp"
+            android:fontFamily="@font/arimo"
+            android:gravity="center"
+            android:text="Scan Barcode from Television"
+            android:textAlignment="center"
+            android:textSize="14sp" />
+
+        <RelativeLayout
+            android:layout_gravity="center"
+            android:id="@+id/lnEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/test"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <EditText
+                    android:gravity="center"
+                    android:id="@+id/inputBarcode"
+                    android:hint="Scan Barcode"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:inputType="textVisiblePassword"
+                    android:layout_marginTop="10dp"
+                    android:maxLength="14"
+                    android:textColor="#000"
+                    android:maxLines="1"
+                    android:minWidth="180dp" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_gravity="center"
+            android:layout_width="450dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="25dp"
+            android:letterSpacing="0.01"
+            android:textSize="16sp" />
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lnEdit"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="35dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:gravity="center"
+            android:padding="10dp">
+
+            <Button
+                android:visibility="gone"
+                android:id="@+id/btnOpenSettings"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/otp_button"
+                android:elevation="2dp"
+                android:text="Connect with internet"
+                android:textColor="@color/light_gray"
+                android:textSize="18sp" />
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/txtNoInternetTitle"
+                android:text="No Internet"
+                android:textColor="#7A0202"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:visibility="invisible">
+
+            <ProgressBar
+                android:layout_width="20dp"
+                android:layout_height="20dp" />
+
+            <TextView
+                android:id="@+id/txtStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Please wait, your request is processing..."
+                android:textColor="@color/light_gray" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:visibility="invisible"
+        android:id="@+id/txtPressOkButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Copyright © 2024 and all rights reserved by - All Sister Concerns of WALTON Group"
+        android:textSize="12sp"
+        android:textStyle="italic"
+        android:textColor="@color/light_gray"
+        android:gravity="center_horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:paddingBottom="8dp" />
+
+</RelativeLayout>

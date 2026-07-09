@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- STATE 1: FOCUSED (When user is typing) -> Shows Solid Fill -->
+    <item android:state_focused="true">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/btn_focused_fill"/> <!-- #3F4246 -->
+            <corners android:radius="50dp"/>
+            <!-- Optional: Remove stroke or keep it. Here it is removed to match Image 1 -->
+        </shape>
+    </item>
+
+    <!-- STATE 2: DEFAULT (Inactive) -> Shows Outline -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/transparent"/>
+            <stroke android:width="2dp" android:color="@color/btn_outline_stroke"/> <!-- #5F6368 -->
+            <corners android:radius="50dp"/>
+        </shape>
+    </item>
+
+</selector>

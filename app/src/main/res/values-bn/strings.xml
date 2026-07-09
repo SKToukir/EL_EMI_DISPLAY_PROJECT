@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">EMI Tracker</string>
+    <string name="caution_messaege">আপনি যদি টিভি বিক্রির জন্য পেমেন্ট অপশন নির্বাচন করে থাকেন, তাহলে নিচের "ঠিক আছে" বাটন চাপুন। এই ধাপটি শুধু টিভি বিক্রির জন্য প্রযোজ্য।\n\nঅন্যথায়, পেমেন্ট পেজ এলে রিমোটের হোম বাটন চাপুন বের হওয়ার জন্য।</string>
+    <string name="emi_selected">আপনি ইএমআই(EMI) অপসন সিলেক্ট করেছেন</string>
+    <string name="cash_selected">আপনি ক্যাশ(Cash) অপসন সিলেক্ট করেছেন</string>
+    <string name="warning_dialog_message">সতর্কতা বার্তা</string>
+    <string name="confirm">নিশ্চিত করুন</string>
+    <string name="cancel">বাতিল করুন</string>
+    <string name="television_is_locked">"আপনার টেলিভিশন লক করা আছে। "</string>
+    <string name="unlock_message">পরবর্তী কিস্তির টাকা প্রদান করে টিভিটি আনলক করুন।</string>
+    <string name="barcode">বারকোড</string>
+    <string name="barcode_passcode_message">প্রদর্শিত বারকোড ও পাসকোড সংগ্রহ করুন এবং আপনার টিভি বিক্রেতার সাথে যোগাযোগ করুন।</string>
+    <string name="passcode">পাসকোড</string>
+    <string name="unlock">আনলক করুন</string>
+    <string name="footer_messsage">এক মাস পূর্ণ হওয়ার আগে টিভি লক হলে, প্রদর্শিত বারকোড ও পাসকোড নিয়ে বিক্রেতার সাথে যোগাযোগ করুন।</string>
+    <string name="press_ok">আপনার রিমোট থেকে ওকে বোতাম টিপুন।</string>
+    <string name="emi_complete">ইএমআই কিস্তি পরিশোধ সম্পন্ন!</string>
+    <string name="check_internet_connection">অনুগ্রহ করে ইন্টারনেটে সংযোগ করুন।</string>
+    <string name="enter_correct_barcode">"অনুগ্রহ করে সঠিক বারকোড লিখুন। "</string>
+    <string name="device_clean">সফলভাবে তথ্য মুছে ফেলা হয়েছে</string>
+    <string name="warning_message">আপনার টিভিটি শীঘ্রই লক হতে পারে। অনুগ্রহ করে সময়মতো কিস্তি পরিশোধ করুন, অন্যথায় সেবা বন্ধ হয়ে যাবে।
+যদি আপনি ইতিমধ্যে সম্পূর্ণ নগদে (Cash) টিভিটি ক্রয় করে থাকেন, তাহলে লক এড়ানোর জন্য অনুগ্রহ করে আপনার বিক্রয় কেন্দ্রের সাথে যোগাযোগ করুন।</string>
+    <string name="caution_message">আপনি যদি টিভি বিক্রির জন্য কোনো পেমেন্ট অপশন নির্বাচন করে থাকেন, তাহলে নিচের <b>নিশ্চিত করুন</b> বাটনটি চাপুন। এই ধাপটি শুধুমাত্র টিভি বিক্রির সময় প্রয়োজন।</string>
+
+    <string name="warning_hint_message">অন্যথায় বাতিল করুন বাটন অথবা রিমোটের হোম বাটন চাপুন</string>
+
+    <string name="remote_nav_hint"> নির্বাচন করুন  OK</string>
+    <string name="caution_display_message">ডিসপ্লে ব্যবহারের সময়সীমা বৃদ্ধি করতে একটি বৈধ কোড প্রদান করুন। কোডটি EMI পোর্টাল থেকে সংগ্রহ করতে হবে। যদি আপনার পোর্টালে অ্যাক্সেস না থাকে, অনুগ্রহ করে সংশ্লিষ্ট কর্তৃপক্ষের সাথে যোগাযোগ করুন।</string>
+
+</resources>

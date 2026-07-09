@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">EMI Tracker</string>
+    <string name="caution_messaege">ඔබ රූපවාහිනිය විකිණීම සඳහා ගෙවීම් විකල්පයක් තෝරාගෙන තිබේ නම්, පහත \"තහවුරු කරන්න\" බොත්තම ඔබන්න. මෙම පියවර අවශ්‍ය වන්නේ රූපවාහිනිය විකිණීම සඳහා පමණි. එසේ නොමැතිනම්, ගෙවීම් පිටුව දිස්වන්නේ නම්, පිටවීමට දුරස්ථ පාලකයේ මුල් පිටුව බොත්තම ඔබන්න.</string>
+    <string name="emi_selected">ඔබ (EMI) විකල්පය තෝරාගෙන ඇත.</string>
+    <string name="cash_selected">ඔබ (මුදල්) විකල්පය තෝරාගෙන ඇත.</string>
+    <string name="warning_dialog_message">අනතුරු ඇඟවීමේ පණිවිඩය</string>
+    <string name="confirm">තහවුරු කරන්න</string>
+    <string name="cancel">පිටවීම</string>
+    <string name="television_is_locked">ඔබේ රූපවාහිනිය අගුළු දමා ඇත!</string>
+    <string name="unlock_message">ඊළඟ වාරිකය ගෙවීමෙන් රූපවාහිනිය අගුළු හරින්න</string>
+    <string name="barcode">තීරු කේතය</string>
+    <string name="barcode_passcode_message">ප්‍රදර්ශනය කර ඇති තීරු කේතය සහ මුර කේතය එකතු කර ඔබේ රූපවාහිනී විකුණුම්කරු අමතන්න.</string>
+    <string name="passcode">මුර කේතය</string>
+    <string name="unlock">ඔබේ රූපවාහිනිය අගුළු හරින්න</string>
+    <string name="footer_messsage">මාසයකට පෙර රූපවාහිනිය අගුළු දමා තිබේ නම්, ප්‍රදර්ශනය කර ඇති තීරු කේතය සහ මුර කේතය එකතු කර විකුණුම්කරු අමතන්න.</string>
+    <string name="press_ok">ඔබගේ දුරස්ථ පාලකයෙන් OK බොත්තම ඔබන්න</string>
+    <string name="emi_complete">EMI වාරික ගෙවීම සම්පූර්ණයි!</string>
+    <string name="check_internet_connection">කරුණාකර අන්තර්ජාලයට සම්බන්ධ වන්න.</string>
+    <string name="enter_correct_barcode">කරුණාකර නිවැරදි තීරු කේතය ඇතුළත් කරන්න.</string>
+    <string name="device_clean">උපාංගය සාර්ථකව පිරිසිදු කරන ලදී</string>
+    <string name="warning_message">ඔබගේ රූපවාහිනිය ඉක්මනින් අගුළු දැමිය හැක. කරුණාකර ඔබගේ වාරික ගෙවීම් නියමිත වේලාවට සිදු කරන්න, නැතහොත් සේවාව නවත්වනු ඇත.
+ඔබ මෙම රූපවාහිනිය මුදල් ගෙවා (Cash) මිලදී ගෙන ඇත්නම්, අගුළු දැමීම වැළැක්වීමට කරුණාකර ඔබගේ විකුණුම් ස්ථානය අමතන්න.</string>
+    <string name="caution_message">ඔබ රූපවාහිනිය විකිණීම සඳහා ගෙවීම් විකල්පයක් තෝරාගෙන ඇත්නම්, කරුණාකර පහතින් ඇති <b>තහවුරු කරන්න</b> බොත්තම ඔබන්න. මෙම පියවර අවශ්‍ය වන්නේ රූපවාහිනිය විකිණීමේදී පමණි.</string>
+
+    <string name="warning_hint_message">එසේ නොමැතිනම් අවලංගු කරන්න බොත්තම හෝ රිමෝට් එකේ හෝම් බොත්තම ඔබන්න</string>
+
+    <string name="remote_nav_hint">තෝරන්න  OK</string>
+</resources>

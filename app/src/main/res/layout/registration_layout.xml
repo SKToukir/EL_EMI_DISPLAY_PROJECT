@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:visibility="visible"
+        android:id="@+id/rlLockLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/lnTextMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:fontFamily="@font/alata"
+                android:gravity="center"
+                android:text="Your Television is Locked!"
+                android:textColor="#F43B3B"
+                android:textSize="45dp" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:gravity="center"
+                android:text="পরবর্তী কিস্তির টাকা প্রদান করে আপনার টিভিটি আনলক করুন"
+                android:textColor="@color/light_gray"
+                android:textSize="25dp" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="আপনার টিভি আনলক করার জন্য নিচে প্রদর্শিত বারকোড ও পাস কোড নিয়ে আপনার টিভি বিক্রেতার সাথে যোগাযোগ করে পিন কোড সংগ্রহ করুন এবং উক্ত পিন কোডটি ব্যবহার করে টিভি আনলক করুন "
+                android:textColor="@color/light_gray"
+                android:textSize="18dp" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="250dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/border_background"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtBarcode"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="#fff"
+                        android:gravity="center"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="25dp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:gravity="center"
+                        android:text="বারকোড"
+                        android:textColor="@color/white"
+                        android:textSize="25dp"
+                        android:textStyle="normal" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="250dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/border_background"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtPassCode"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="#fff"
+                        android:gravity="center"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="25dp"
+                        android:textStyle="normal" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:gravity="center"
+                        android:text="পাস কোড"
+                        android:textColor="@color/white"
+                        android:textSize="25dp"
+                        android:textStyle="normal" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnPinCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lnTextMessage"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal">
+
+
+            <EditText
+                android:id="@+id/inputPincode"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:hint="Input 8 Digit Pin Code"
+                android:maxLength="8"
+                android:maxLines="1"
+                android:minWidth="180dp"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnSubmitEMICode"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lnPinCode"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/otp_button"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:focusedByDefault="true"
+            android:text="আনলক করুন"
+            android:textColor="#000"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+       <LinearLayout
+           android:padding="5dp"
+           android:gravity="center"
+           android:layout_alignParentBottom="true"
+           android:orientation="vertical"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+
+           <TextView
+               android:id="@+id/rlWarning"
+               android:layout_width="650dp"
+               android:layout_height="wrap_content"
+               android:layout_centerHorizontal="true"
+               android:gravity="center"
+               android:padding="5dp"
+               android:text="কিস্তি পরিশোধের সময় এক মাস পূর্ণ হওয়ার আগে যদি টিভিটি লক হয়ে যায় সেক্ষেত্রে স্ক্রিনে প্রদর্শিত বারকোড ও পাস কোড নিয়ে আপনার টিভির বিক্রেতার সাথে যোগাযোগ করুন।"
+               android:textColor="#F43B3B" />
+
+           <LinearLayout
+               android:padding="10dp"
+               android:visibility="gone"
+               android:id="@+id/lnDealerInfo"
+               android:layout_centerHorizontal="true"
+               android:layout_below="@+id/rlWarning"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal">
+
+               <ImageView
+                   android:id="@+id/icon_phone"
+                   android:layout_width="24dp"
+                   android:layout_height="24dp"
+                   android:layout_marginEnd="10dp"
+                   android:contentDescription="Phone icon"
+                   android:src="@drawable/phone_icon" />
+
+               <TextView
+                   android:layout_marginEnd="10dp"
+                   android:id="@+id/tv_contact_title"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Contact"
+                   android:textColor="#7DF9FF"
+                   android:textSize="16sp"
+                   android:textStyle="bold" />
+
+               <TextView
+                   android:layout_marginEnd="10dp"
+                   android:id="@+id/tv_contact_details"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text=""
+                   android:textColor="#6F8FAF"
+                   android:textSize="14sp" />
+
+               <TextView
+                   android:id="@+id/tv_phone_number"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text=""
+                   android:textColor="#6F8FAF"
+                   android:textSize="14sp" />
+           </LinearLayout>
+
+       </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/rlKeyboardLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/txtSubtitle"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="15dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="PIN Code Verification"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/txtSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/pinText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="15dp"
+            android:gravity="center"
+            android:lineSpacingExtra="5dp"
+            android:text=""
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="@color/light_gray"
+            android:textSize="14sp"
+            android:textStyle="normal" />
+
+
+        <LinearLayout
+            android:id="@+id/pinText"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <EditText
+                android:textColor="#000"
+                android:gravity="center"
+                android:id="@+id/inputBarcode"
+                android:hint="Pin Code"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:focusedByDefault="false"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:maxLength="14"
+                android:maxLines="1"
+                android:minWidth="180dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pinText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:padding="10dp">
+
+            <Button
+                android:id="@+id/btnOtpSubmit"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/otp_button"
+                android:clickable="true"
+                android:elevation="4dp"
+                android:focusable="true"
+                android:text="Submit"
+                android:textColor="@color/light_gray" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:visibility="invisible"
+            android:id="@+id/txtPressOkButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Copyright © 2024 and all rights reserved by - All Sister Concerns of WALTON Group"
+            android:textSize="12sp"
+            android:textStyle="italic"
+            android:textColor="@color/light_gray"
+            android:gravity="center_horizontal"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:paddingBottom="8dp" />
+
+
+
+        <include
+            layout="@layout/custom_keyboard"/>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:visibility="gone"
+        android:id="@+id/imgSuccess"
+        android:src="@drawable/unlockimg"
+        android:layout_centerInParent="true"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>
