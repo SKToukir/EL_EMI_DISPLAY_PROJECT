@@ -8,7 +8,9 @@
     android:paddingStart="56dp"
     android:paddingEnd="56dp"
     android:paddingTop="28dp"
-    android:paddingBottom="28dp">
+    android:paddingBottom="28dp"
+    android:clipChildren="false"
+    android:clipToPadding="false">
 
     <!-- Header -->
     <TextView
@@ -48,21 +50,21 @@
 
             <!-- Illustration -->
             <FrameLayout
-                android:layout_width="160dp"
-                android:layout_height="160dp">
+                android:layout_width="100dp"
+                android:layout_height="100dp">
 
                 <ImageView
                     android:id="@+id/ivTvIcon"
-                    android:layout_width="160dp"
-                    android:layout_height="160dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
                     android:background="@drawable/bg_illustration_circle"
                     android:padding="36dp"
                     android:src="@drawable/ic_tv"
                     app:tint="@color/warranty_primary" />
 
                 <ImageView
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
                     android:layout_gravity="top|end"
                     android:background="@drawable/bg_badge_circle_success"
                     android:padding="7dp"
@@ -169,7 +171,7 @@
                     android:focusable="true"
                     android:focusableInTouchMode="true"
                     android:gravity="center_vertical"
-                    android:hint="ABCD-1234-EFGH"
+                    android:hint="8-Digit Activation Code"
                     android:inputType="textCapCharacters"
                     android:letterSpacing="0.08"
                     android:paddingStart="18dp"
@@ -192,7 +194,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Collect activation code from EMI Kisti Portal and Enter the activation code provided by the salesperson."
+                    android:text="বিক্রয় প্রতিনিধির কাছ থেকে প্রাপ্ত অ্যাক্টিভেশন কোডটি এখানে লিখুন"
                     android:textColor="@color/warranty_text_secondary"
                     android:textSize="13sp" />
 
@@ -203,10 +205,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="15dp"
                 android:background="@drawable/bg_info_card"
                 android:orientation="horizontal"
-                android:padding="4dp">
+                android:padding="8dp">
 
                 <ImageView
                     android:layout_width="22dp"
@@ -224,7 +226,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Don't have an activation code?"
+                        android:text="অ্যাক্টিভেশন কোড নেই?"
                         android:textColor="@color/warranty_text_primary"
                         android:textSize="12sp"
                         android:textStyle="bold" />
@@ -232,11 +234,11 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
+                        android:layout_marginTop="2dp"
                         android:lineSpacingExtra="3dp"
-                        android:text="The activation code is provided by the salesperson during purchase. Salespersons can generate the activation code from the EMI Kisti Portal. Please contact your salesperson if you have not received the code."
+                        android:text="ওয়ারেন্টি অ্যাক্টিভেশন কোডটি বিক্রয় প্রতিনিধি EMI কিস্তি পোর্টাল থেকে তৈরি করে থাকেন। যদি আপনি কোডটি না পেয়ে থাকেন, তাহলে অনুগ্রহ করে আপনার বিক্রয় প্রতিনিধির সাথে যোগাযোগ করুন।"
                         android:textColor="@color/warranty_text_secondary"
-                        android:textSize="11sp" />
+                        android:textSize="10sp" />
 
                 </LinearLayout>
 
@@ -248,6 +250,8 @@
 
     <!-- Bottom buttons -->
     <LinearLayout
+        android:clipChildren="false"
+        android:clipToPadding="false"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"

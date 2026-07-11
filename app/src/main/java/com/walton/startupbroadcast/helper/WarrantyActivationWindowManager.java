@@ -110,10 +110,8 @@ public class WarrantyActivationWindowManager {
 
             LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) row.getLayoutParams();
             if (i > 0) {
-                params.topMargin = dpToPx(12);
                 row.setLayoutParams(params);
             }
-
             llBenefits.addView(row);
         }
     }
