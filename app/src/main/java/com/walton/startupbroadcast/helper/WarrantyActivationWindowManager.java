@@ -17,11 +17,20 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.core.content.ContextCompat;
 
 import com.walton.startupbroadcast.R;
+import com.walton.startupbroadcast.model.ActivationModel;
+import com.walton.startupbroadcast.pin.PinService;
+import com.walton.startupbroadcast.repository.autoregistration.ImplAutoRegistration;
+import com.walton.startupbroadcast.repository.display.ImplIDisplayRepository;
 import com.walton.startupbroadcast.repository.emi.ImplEMIRepository;
+
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.List;
 
 public class WarrantyActivationWindowManager {
 
@@ -29,6 +38,7 @@ public class WarrantyActivationWindowManager {
 
     public interface WarrantyActivationCallback {
         void onActivationConfirmed(String activationCode);
+
         void onActivateLater();
     }
 
@@ -45,6 +55,10 @@ public class WarrantyActivationWindowManager {
     private LinearLayout llBenefits;
 
     private ImplEMIRepository implEMIRepository;
+    private ImplIDisplayRepository implIDisplayRepository;
+    private ImplAutoRegistration implAutoRegistration;
+
+    private boolean pinCodeMatched;
 
     private static class Benefit {
         final int iconRes;
@@ -74,6 +88,8 @@ public class WarrantyActivationWindowManager {
         mainView = LayoutInflater.from(mActivity).inflate(R.layout.activity_warranty_activation, null);
 
         implEMIRepository = new ImplEMIRepository(mActivity);
+        implIDisplayRepository = new ImplIDisplayRepository(mActivity);
+        implAutoRegistration = new ImplAutoRegistration(mActivity);
 
         bindViews();
         populateBenefits();
@@ -119,7 +135,8 @@ public class WarrantyActivationWindowManager {
     private void setupCodeInput() {
         etActivationCode.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
@@ -129,7 +146,8 @@ public class WarrantyActivationWindowManager {
             }
 
             @Override
-            public void afterTextChanged(Editable s) {}
+            public void afterTextChanged(Editable s) {
+            }
         });
     }
 
@@ -162,6 +180,10 @@ public class WarrantyActivationWindowManager {
             showError("Activation code looks too short — please check and try again");
             return;
         }
+        if (!activationCodeNotMatched(code)) {
+            showError("Enter correct Activation Code");
+            return;
+        }
 
         // Replace with your real e-warranty verification call
         // e.g. call waltontvrni.com verification endpoint here
@@ -169,6 +191,10 @@ public class WarrantyActivationWindowManager {
         if (mCallback != null) {
             mCallback.onActivationConfirmed(code);
         }
+    }
+
+    private boolean activationCodeNotMatched(String code) {
+        return checkPinCode(generateSecondHashPinCode(code.toLowerCase()));
     }
 
     private void showError(String message) {
@@ -235,4 +261,50 @@ public class WarrantyActivationWindowManager {
         float density = mActivity.getResources().getDisplayMetrics().density;
         return Math.round(dp * density);
     }
+
+    /*
+     * Updated V3 Added below method
+     * */
+    private String getPinCode(String code) {
+        return code.split("\\s+")[0];
+    }
+
+    private String generateSecondHashPinCode(String s) {
+        String combinedString = s + implAutoRegistration.getMacAddress() + s;
+
+        try {
+            MessageDigest md = MessageDigest.getInstance("SHA-256");
+            byte[] hashedBytes = md.digest(combinedString.getBytes());
+
+            // Convert hashed bytes to hexadecimal representation
+            StringBuilder hexString = new StringBuilder();
+            for (byte b : hashedBytes) {
+                String hex = Integer.toHexString(0xff & b);
+                if (hex.length() == 1) hexString.append('0');
+                hexString.append(hex);
+            }
+            // Take the first 8 characters and capitalize them
+            return hexString.substring(0, 8).toUpperCase();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    private boolean checkPinCode(String pinCode) {
+        List<ActivationModel> activationModelList = implEMIRepository.getActivationList();
+        if (getPinCode(activationModelList.get(0).getCode()).equalsIgnoreCase(pinCode)) {
+            if (!activationModelList.get(0).isPaid()) {
+                activationModelList.get(0).setPaid(true);
+                Log.d(TAG, "checkPincode: " + getPinCode(activationModelList.get(0).getCode()) + "\n" + pinCode);
+                implEMIRepository.saveActivationData(activationModelList);
+                pinCodeMatched = true;
+            } else {
+                pinCodeMatched = true;
+            }
+        }
+        return pinCodeMatched;
+    }
+
+
 }

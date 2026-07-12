@@ -161,12 +161,16 @@ public class MainActivity extends Activity
         warrantyActivationWindowManager = new WarrantyActivationWindowManager(MainActivity.this, new WarrantyActivationWindowManager.WarrantyActivationCallback() {
             @Override
             public void onActivationConfirmed(String activationCode) {
+                warrantyActivationWindowManager.dismiss();
 
+                activateAndSetEMIData();
+                Toast.makeText(getApplicationContext(), "Your device is successfully activated!",Toast.LENGTH_LONG).show();
             }
 
             @Override
             public void onActivateLater() {
-
+                warrantyActivationWindowManager.dismiss();
+                displayWindowManager.showDisplayManager(implIDisplayRepository);
             }
         });
         // pinHelper is created lazily when MAC address is available
@@ -361,6 +365,10 @@ public class MainActivity extends Activity
         implEMIRepository.savePaymentMethod(PAYMENT_METHOD_INSTALLMENT);
         implEMIRepository.setShouldShowEMIDialog(false);
         implEMIRepository.setStartCounter(EMI_AP_OPEN_COUNTER_LIMIT);
+
+        implIDisplayRepository.setDisplayStatus(false);
+        implIDisplayRepository.setDisplayProductionMode(false);
+
         Toast.makeText(this, "EMI Activated", Toast.LENGTH_SHORT).show();
         finish();
     }

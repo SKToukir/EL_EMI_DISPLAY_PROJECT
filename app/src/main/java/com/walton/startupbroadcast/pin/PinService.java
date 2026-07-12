@@ -46,6 +46,10 @@ public class PinService {
         return sha256(String.valueOf(new Random().nextInt(0xFFFF)));
     }
 
+    public String extractPinCode(String code) {
+        return code.split("\\s+")[0];
+    }
+
     // Step 3: Generate EMI PINs (list + concatenated string)
     public Result generateEmiPins(PinContext context) {
         List<String> pinCodeList = new ArrayList<>();
@@ -95,6 +99,24 @@ public class PinService {
         }
 
         return new Result(passCodeList, concatenated.toString());
+    }
+
+    public String generateHashedPin(String pin, String macAddress) {
+        String combined = pin + macAddress + pin;
+        try {
+            MessageDigest md = MessageDigest.getInstance("SHA-256");
+            byte[] hashedBytes = md.digest(combined.getBytes());
+            StringBuilder hex = new StringBuilder();
+            for (byte b : hashedBytes) {
+                String h = Integer.toHexString(0xff & b);
+                if (h.length() == 1) hex.append('0');
+                hex.append(h);
+            }
+            return hex.substring(0, 8).toUpperCase();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
     private String generatePin(PinContext context, int i) {
