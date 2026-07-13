@@ -14,22 +14,19 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.core.content.ContextCompat;
 
 import com.walton.startupbroadcast.R;
 import com.walton.startupbroadcast.model.ActivationModel;
-import com.walton.startupbroadcast.pin.PinService;
 import com.walton.startupbroadcast.repository.autoregistration.ImplAutoRegistration;
 import com.walton.startupbroadcast.repository.display.ImplIDisplayRepository;
 import com.walton.startupbroadcast.repository.emi.ImplEMIRepository;
 
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
 public class WarrantyActivationWindowManager {
@@ -52,11 +49,14 @@ public class WarrantyActivationWindowManager {
     private TextView txtCodeError, txtTvBarcode;
     private Button btnActivateWarranty;
     private Button btnActivateLater;
+    private FrameLayout flSuccessView;
     private LinearLayout llBenefits;
 
     private ImplEMIRepository implEMIRepository;
     private ImplIDisplayRepository implIDisplayRepository;
     private ImplAutoRegistration implAutoRegistration;
+
+    private PinVerificationHelper pinVerificationHelper;
 
     private boolean pinCodeMatched;
 
@@ -87,9 +87,11 @@ public class WarrantyActivationWindowManager {
         mActivity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         mainView = LayoutInflater.from(mActivity).inflate(R.layout.activity_warranty_activation, null);
 
-        implEMIRepository = new ImplEMIRepository(mActivity);
         implIDisplayRepository = new ImplIDisplayRepository(mActivity);
         implAutoRegistration = new ImplAutoRegistration(mActivity);
+        implEMIRepository = new ImplEMIRepository(mActivity);
+        pinVerificationHelper = new PinVerificationHelper(implAutoRegistration.getMacAddress());
+
 
         bindViews();
         populateBenefits();
@@ -106,6 +108,9 @@ public class WarrantyActivationWindowManager {
         btnActivateWarranty = mainView.findViewById(R.id.btnActivateWarranty);
         btnActivateLater = mainView.findViewById(R.id.btnActivateLater);
         llBenefits = mainView.findViewById(R.id.llBenefits);
+        flSuccessView = mainView.findViewById(R.id.flSuccessView);
+
+        flSuccessView.setVisibility(View.GONE);
     }
 
     private void populateBenefits() {
@@ -184,17 +189,40 @@ public class WarrantyActivationWindowManager {
             showError("Enter correct Activation Code");
             return;
         }
-
-        // Replace with your real e-warranty verification call
-        // e.g. call waltontvrni.com verification endpoint here
-        dismiss();
+        flSuccessView.setVisibility(View.VISIBLE);
         if (mCallback != null) {
             mCallback.onActivationConfirmed(code);
         }
     }
 
     private boolean activationCodeNotMatched(String code) {
-        return checkPinCode(generateSecondHashPinCode(code.toLowerCase()));
+
+        pinVerificationHelper.verify(code, implEMIRepository.getActivationList(),
+                new PinVerificationHelper.PinVerificationCallback() {
+                    @Override
+                    public void onPinMatched(List<ActivationModel> updatedList) {
+
+                        implEMIRepository.saveActivationData(updatedList);
+                        pinCodeMatched = true;
+                    }
+
+                    @Override
+                    public void onAllEmiComplete() {
+
+                    }
+
+                    @Override
+                    public void onAlreadyPaid() {
+                        pinCodeMatched = true;
+                    }
+
+                    @Override
+                    public void onPinNotMatched() {
+                        pinCodeMatched = false;
+                    }
+                });
+
+        return pinCodeMatched;
     }
 
     private void showError(String message) {
@@ -261,50 +289,50 @@ public class WarrantyActivationWindowManager {
         float density = mActivity.getResources().getDisplayMetrics().density;
         return Math.round(dp * density);
     }
+//
+//    /*
+//     * Updated V3 Added below method
+//     * */
+//    private String getPinCode(String code) {
+//        return code.split("\\s+")[0];
+//    }
+//
+//    private String generateSecondHashPinCode(String s) {
+//        String combinedString = s + implAutoRegistration.getMacAddress() + s;
+//
+//        try {
+//            MessageDigest md = MessageDigest.getInstance("SHA-256");
+//            byte[] hashedBytes = md.digest(combinedString.getBytes());
+//
+//            // Convert hashed bytes to hexadecimal representation
+//            StringBuilder hexString = new StringBuilder();
+//            for (byte b : hashedBytes) {
+//                String hex = Integer.toHexString(0xff & b);
+//                if (hex.length() == 1) hexString.append('0');
+//                hexString.append(hex);
+//            }
+//            // Take the first 8 characters and capitalize them
+//            return hexString.substring(0, 8).toUpperCase();
+//        } catch (NoSuchAlgorithmException e) {
+//            e.printStackTrace();
+//            return null;
+//        }
+//    }
 
-    /*
-     * Updated V3 Added below method
-     * */
-    private String getPinCode(String code) {
-        return code.split("\\s+")[0];
-    }
-
-    private String generateSecondHashPinCode(String s) {
-        String combinedString = s + implAutoRegistration.getMacAddress() + s;
-
-        try {
-            MessageDigest md = MessageDigest.getInstance("SHA-256");
-            byte[] hashedBytes = md.digest(combinedString.getBytes());
-
-            // Convert hashed bytes to hexadecimal representation
-            StringBuilder hexString = new StringBuilder();
-            for (byte b : hashedBytes) {
-                String hex = Integer.toHexString(0xff & b);
-                if (hex.length() == 1) hexString.append('0');
-                hexString.append(hex);
-            }
-            // Take the first 8 characters and capitalize them
-            return hexString.substring(0, 8).toUpperCase();
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
-
-    private boolean checkPinCode(String pinCode) {
-        List<ActivationModel> activationModelList = implEMIRepository.getActivationList();
-        if (getPinCode(activationModelList.get(0).getCode()).equalsIgnoreCase(pinCode)) {
-            if (!activationModelList.get(0).isPaid()) {
-                activationModelList.get(0).setPaid(true);
-                Log.d(TAG, "checkPincode: " + getPinCode(activationModelList.get(0).getCode()) + "\n" + pinCode);
-                implEMIRepository.saveActivationData(activationModelList);
-                pinCodeMatched = true;
-            } else {
-                pinCodeMatched = true;
-            }
-        }
-        return pinCodeMatched;
-    }
+//    private boolean checkPinCode(String pinCode) {
+//        List<ActivationModel> activationModelList = implEMIRepository.getActivationList();
+//        if (getPinCode(activationModelList.get(0).getCode()).equalsIgnoreCase(pinCode)) {
+//            if (!activationModelList.get(0).isPaid()) {
+//                activationModelList.get(0).setPaid(true);
+//                Log.d(TAG, "checkPincode: " + getPinCode(activationModelList.get(0).getCode()) + "\n" + pinCode);
+//                implEMIRepository.saveActivationData(activationModelList);
+//                pinCodeMatched = true;
+//            } else {
+//                pinCodeMatched = true;
+//            }
+//        }
+//        return pinCodeMatched;
+//    }
 
 
 }

@@ -161,10 +161,11 @@ public class MainActivity extends Activity
         warrantyActivationWindowManager = new WarrantyActivationWindowManager(MainActivity.this, new WarrantyActivationWindowManager.WarrantyActivationCallback() {
             @Override
             public void onActivationConfirmed(String activationCode) {
-                warrantyActivationWindowManager.dismiss();
+
+                new Handler().postDelayed(() -> warrantyActivationWindowManager.dismiss(),4000);
 
                 activateAndSetEMIData();
-                Toast.makeText(getApplicationContext(), "Your device is successfully activated!",Toast.LENGTH_LONG).show();
+
             }
 
             @Override
@@ -368,8 +369,6 @@ public class MainActivity extends Activity
 
         implIDisplayRepository.setDisplayStatus(false);
         implIDisplayRepository.setDisplayProductionMode(false);
-
-        Toast.makeText(this, "EMI Activated", Toast.LENGTH_SHORT).show();
         finish();
     }
 
