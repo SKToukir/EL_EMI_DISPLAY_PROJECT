@@ -1,7 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <gradient
-        android:startColor="@color/warranty_background"
-        android:endColor="@android:color/white"
-        android:angle="90" />
+    <solid android:color="@color/background" />
 </shape>

@@ -283,7 +283,7 @@
             android:focusableInTouchMode="true"
             android:text="Activate Warranty"
             android:textAllCaps="false"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/black"
             android:textSize="18sp"
             android:textStyle="bold" />
 

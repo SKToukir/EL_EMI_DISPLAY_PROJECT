@@ -25,14 +25,15 @@
     <!-- Text and Icon color -->
     <color name="btn_text_color">#E8EAED</color>
 
-    <color name="warranty_primary">#1565C0</color>
-    <color name="warranty_secondary">#42A5F5</color>
-    <color name="warranty_background">#F5F8FC</color>
-    <color name="warranty_success">#2E7D32</color>
-    <color name="warranty_warning">#F9A825</color>
-    <color name="warranty_text_primary">#202124</color>
-    <color name="warranty_text_secondary">#5F6368</color>
-    <color name="warranty_error">#E70000</color>
-    <color name="warranty_card_border">#D0D7E2</color>
+    <!-- Warranty Activation - Dark Theme, matched to existing app palette -->
+    <color name="warranty_primary">#FFFFFF</color>          <!-- headers, main icon tint -->
+    <color name="warranty_text_primary">#EEEEEE</color>     <!-- input text, primary body -->
+    <color name="warranty_text_secondary">#9AA0A6</color>   <!-- subtext, matches your footer/notice gray -->
+    <color name="warranty_text_tertiary">#CCCCCC</color>    <!-- optional third tier, if needed -->
+    <color name="warranty_error">#E57373</color>            <!-- matches your CUSTOMER NOTICE red -->
+    <color name="warranty_warning">#B0B3B8</color>          <!-- matches your header subtitle gray -->
+    <color name="warranty_success">#FFFFFF</color>
+    <color name="warranty_divider">#5F6368</color>          <!-- matches your divider View -->
+
 
 </resources>
