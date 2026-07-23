@@ -517,7 +517,7 @@
 
                     android:background="@drawable/bg_payment_button"
                     android:textColor="@color/btn_text_color"
-                    android:text="Set Payment"
+                    android:text="Activate Device"
                     android:textAllCaps="false"
                     android:gravity="center"
                     android:textSize="22sp"

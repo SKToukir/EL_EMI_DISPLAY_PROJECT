@@ -295,7 +295,7 @@
             android:background="@drawable/bg_button_secondary"
             android:focusable="true"
             android:focusableInTouchMode="true"
-            android:text="Activate Later"
+            android:text="Exit"
             android:textAllCaps="false"
             android:textColor="@color/warranty_text_secondary"
             android:textSize="18sp" />
