@@ -13,7 +13,7 @@
         android:clipToPadding="false"
         android:layout_width="28dp"
         android:layout_height="28dp"
-        android:background="@drawable/bg_benefit_icon_circle">
+        android:background="@drawable/bg_badge_circle_white">
 
         <ImageView
             android:id="@+id/ivBenefitIcon"
@@ -29,7 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="14dp"
-        android:textColor="@color/warranty_text_primary"
+        android:textColor="@color/white"
         android:textSize="12sp"
         android:textStyle="bold" />
 

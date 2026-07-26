@@ -414,7 +414,7 @@ public class MainActivity extends Activity
             @Override
             public void onError(String message) {
                 Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
-                finish();
+                handleOfflineRegistrationCheck();
             }
 
             @Override
@@ -443,7 +443,7 @@ public class MainActivity extends Activity
 
             @Override
             public void onError(String message) {
-                finish();
+                handleOfflineRegistrationCheck();
                 Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
             }
         });
@@ -458,7 +458,7 @@ public class MainActivity extends Activity
 
             @Override
             public void onError(String message) {
-                finish();
+                handleOfflineRegistrationCheck();
                 Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
             }
         });

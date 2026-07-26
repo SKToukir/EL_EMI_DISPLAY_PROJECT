@@ -76,7 +76,7 @@
                     app:tint="@color/warranty_primary" />
 
                 <ImageView
-                    android:layout_width="32dp"
+                    android:layout_width="26dp"
                     android:layout_height="32dp"
                     android:layout_gravity="top|end"
                     android:background="@drawable/bg_badge_circle_success"
@@ -277,13 +277,13 @@
             android:layout_height="54dp"
             android:layout_weight="1"
             android:layout_marginEnd="16dp"
-            android:background="@drawable/bg_button_primary"
+            android:background="@drawable/btn_selector_background"
             android:elevation="4dp"
             android:focusable="true"
             android:focusableInTouchMode="true"
             android:text="Activate Warranty"
             android:textAllCaps="false"
-            android:textColor="@android:color/black"
+            android:textColor="@color/btn_selector_text_color"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -292,12 +292,12 @@
             android:layout_width="0dp"
             android:layout_height="54dp"
             android:layout_weight="1"
-            android:background="@drawable/bg_button_secondary"
+            android:background="@drawable/btn_selector_background"
             android:focusable="true"
             android:focusableInTouchMode="true"
             android:text="Exit"
             android:textAllCaps="false"
-            android:textColor="@color/warranty_text_secondary"
+            android:textColor="@color/btn_selector_text_color"
             android:textSize="18sp" />
 
     </LinearLayout>
