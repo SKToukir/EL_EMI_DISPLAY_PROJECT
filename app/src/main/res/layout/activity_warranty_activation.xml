@@ -76,7 +76,7 @@
                     app:tint="@color/warranty_primary" />
 
                 <ImageView
-                    android:layout_width="26dp"
+                    android:layout_width="32dp"
                     android:layout_height="32dp"
                     android:layout_gravity="top|end"
                     android:background="@drawable/bg_badge_circle_success"
@@ -141,7 +141,7 @@
                         android:text="Warranty Activation Code"
                         android:textColor="@color/warranty_primary"
                         android:textSize="20sp"
-                        android:textStyle="bold" />
+                        android:textStyle="normal" />
                 </LinearLayout>
 
                 <!-- TV Barcode display -->
@@ -184,7 +184,7 @@
                     android:focusable="true"
                     android:focusableInTouchMode="true"
                     android:gravity="center_vertical"
-                    android:hint="8-Digit Activation Code"
+                    android:hint="Input 8-Digit Activation Code"
                     android:inputType="textCapCharacters"
                     android:letterSpacing="0.08"
                     android:paddingStart="18dp"
@@ -208,7 +208,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:text="বিক্রয় প্রতিনিধির কাছ থেকে প্রাপ্ত অ্যাক্টিভেশন কোডটি এখানে লিখুন"
-                    android:textColor="@color/warranty_text_secondary"
+                    android:textColor="@color/dark_gray"
                     android:textSize="13sp" />
 
             </LinearLayout>

@@ -124,7 +124,7 @@ public class WarrantyActivationWindowManager {
 
             icon.setImageResource(b.iconRes);
             icon.setColorFilter(
-                    ContextCompat.getColor(mActivity, R.color.warranty_success),
+                    ContextCompat.getColor(mActivity, android.R.color.holo_green_light),
                     PorterDuff.Mode.SRC_IN
             );
             label.setText(b.label);
