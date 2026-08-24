@@ -23,6 +23,7 @@ public class BarcodeProcessor {
         String passCodeString = passCodeResult.concatenated;
 
         // Step 2: generate dynamic salt
+        String displaySalt = pinService.generateDynamicSalt();
         String salt = pinService.generateDynamicSalt();
         autoRegistration.savePhoneNumber(salt);
 
@@ -33,7 +34,8 @@ public class BarcodeProcessor {
         String emiPinsString = emiPinResult.concatenated;
 
         // Step 4: generate display pins
-        PinService.Result displayPinResult = pinService.generateDisplayPins(context);
+        PinContext displayContext = new PinContext(barcode, macAddress, displaySalt);
+        PinService.Result displayPinResult = pinService.generateDisplayPins(displayContext);
         List<String> displayPins = displayPinResult.list;
         String displayPinsString = displayPinResult.concatenated;
 

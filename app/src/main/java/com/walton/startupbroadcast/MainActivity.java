@@ -165,7 +165,6 @@ public class MainActivity extends Activity
                 new Handler().postDelayed(() -> warrantyActivationWindowManager.dismiss(),4000);
 
                 activateAndSetEMIData();
-
             }
 
             @Override
